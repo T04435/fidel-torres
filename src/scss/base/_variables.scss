@@ -1,3 +1,4 @@
+// COLORS
 $color-white: #FFF8F1;
 $color-black: #1A2330;
 $color-primary: #1779BA;
@@ -5,3 +6,18 @@ $color-secondary: #767676;
 $color-success: #61C9A8;
 $color-warning: #ED9B40;
 $color-alert: #BA3B46;
+
+// SIZES
+$size-menu: 60px;
+$size-thumb: 44px;
+
+// BREAK POINTS
+$break-md: 768px;
+$break-lg: 1024px;
+$break-md-max: $break-md - 1;
+$break-lg-max: $break-lg - 1;
+
+// THIRD PARTIES
+$color-stack-orange: #F48023;
+$color-stack-grey: #BCBBBB;
+$color-github: #171616;

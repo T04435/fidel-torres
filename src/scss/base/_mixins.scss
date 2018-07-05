@@ -1,0 +1,7 @@
+@import "variables";
+
+@mixin media-md(){
+  @media all and (min-width: $break-md) {
+    @content
+  }
+}

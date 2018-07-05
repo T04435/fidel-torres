@@ -1,3 +1,23 @@
-<p>
-  header works!
-</p>
+<div class="mobile-menu">
+  <span class="menu-toggle" (click)="toogleMenu()">
+    <span class="bar bar__top"></span>
+    <span class="bar bar__middle"></span>
+    <span class="bar bar__bottom"></span>
+  </span>
+</div>
+<header [class.show]="isShowingMenu">
+  <span class="logo">t04435</span>
+  <span class="spacer"></span>
+  <span class="link">career</span>
+  <span class="link">portfolio</span>
+  <span class="link">education</span>
+  <span class="link">contact</span>
+  <div class="dev-media">
+    <a href="https://stackoverflow.com/users/4374291/t04435" target="_blank">
+      <i [inlineSVG]="'assets/svg/ico-stack.svg'"></i>
+    </a>
+    <a href="https://github.com/T04435">
+      <i [inlineSVG]="'assets/svg/ico-git-mark.svg'"></i>
+    </a>
+  </div>
+</header>

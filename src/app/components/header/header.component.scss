@@ -1,0 +1,93 @@
+@import 'variables';
+@import 'mixins';
+
+.mobile-menu {
+  display: flex;
+  align-items: center;
+  padding-left: 1em;
+  height: $size-menu;
+  color: $color-white;
+  background-color: $color-black;
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: $size-thumb;
+    height: $size-thumb;
+
+    .bar {
+      display: block;
+      width: $size-thumb;
+      border-top: 2px solid $color-white;
+    }
+  }
+
+  @include media-md() {
+    display: none;
+  }
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: $size-menu + 2;
+  left: 0;
+  height: calc(90vh - #{$size-menu});
+  width: 90vw;
+  background-color: $color-black;
+  color: $color-white;
+  transform: translate(-95vw);
+  transition: all 250ms linear;
+
+  &.show {
+    transform: translate(0px);
+  }
+
+  .logo {
+    text-transform: uppercase;
+    font-size: $size-menu / 2;
+    text-align: center;
+    border-bottom: 2px solid;
+  }
+
+  .link {
+    text-transform: capitalize;
+    height: $size-thumb;
+    padding: 1em;
+  }
+
+  .dev-media {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: $size-thumb;
+    margin-top: auto;
+    border-top: 2px solid;
+
+    a {
+      flex: 1;
+      font-size: 32px;
+    }
+  }
+
+  @include media-md() {
+    //display: flex;
+    //flex-direction: column;
+    //position: absolute;
+    //top: $size-menu + 2;
+    //left: 0;
+    //height: calc(90vh - #{$size-menu});
+    //width: 90vw;
+    //background-color: $color-black;
+    //color: $color-white;
+    //transform: translate(-95vw);
+    //transition: all 250ms linear;
+    // TODO: Add styles for md menu
+    position: relative;
+    background: tomato;
+  }
+
+}
+

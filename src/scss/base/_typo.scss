@@ -23,13 +23,22 @@
   url('../assets/fonts/roboto/roboto-v18-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
 }
 
+%optimize-font{
+ text-rendering: optimizeLegibility;
+}
+
+%font-header {
+  font-family: 'Lilita One', cursive;
+  @extend %optimize-font;
+}
+
 body {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  text-rendering: optimizeLegibility;
 }
 
 h1,
 h2,
-h3 {
-  font-family: 'Lilita One', cursive;
+h3,
+.logo{
+  @extend %font-header;
 }
