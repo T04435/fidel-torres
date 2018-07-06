@@ -14,9 +14,12 @@ body {
 
 svg {
   display: block;
-  width: 1em;
-  height: 1em;
-  margin: 0 auto;
+
+  &[viewBox] {
+    width: 1em;
+    height: 1em;
+    font-size: 1em;
+  }
 }
 
 a {

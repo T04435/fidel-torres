@@ -65,10 +65,38 @@ header {
     height: $size-thumb;
     margin-top: auto;
     border-top: 2px solid;
+    background-color: $color-white;
 
     a {
-      flex: 1;
       font-size: 32px;
+    }
+    ::ng-deep {
+      svg {
+        .stack {
+
+          &-base {
+            fill: $color-stack-grey;
+          }
+          &-overflow {
+            fill: $color-stack-orange;
+          }
+        }
+
+        .linkedin {
+          &-base {
+            fill: $color-linkedin;
+          }
+          &-letters {
+            fill: $color-white;
+          }
+        }
+
+        .git {
+          &-mark {
+            fill: $color-github;
+          }
+        }
+      }
     }
   }
 
@@ -90,4 +118,5 @@ header {
   }
 
 }
+
 
