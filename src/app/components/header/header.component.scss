@@ -19,7 +19,25 @@
     .bar {
       display: block;
       width: $size-thumb;
-      border-top: 2px solid $color-white;
+      border-top: 5px solid $color-white;
+      transition: all 250ms ease-out;
+    }
+
+    &.open {
+      .bar__top {
+        transition-delay: 150ms;
+        transform-origin: top left;
+        transform: rotateZ(45deg);
+      }
+      .bar__middle {
+        transform: translateX(-200%);
+        opacity: 0;
+      }
+      .bar__bottom {
+        transition-delay: 150ms;
+        transform-origin: bottom left;
+        transform: rotateZ(-45deg);
+      }
     }
   }
 
@@ -41,7 +59,7 @@ header {
   transform: translate(-95vw);
   transition: all 250ms linear;
 
-  &.show {
+  &.open {
     transform: translate(0px);
   }
 
@@ -101,18 +119,6 @@ header {
   }
 
   @include media-md() {
-    //display: flex;
-    //flex-direction: column;
-    //position: absolute;
-    //top: $size-menu + 2;
-    //left: 0;
-    //height: calc(90vh - #{$size-menu});
-    //width: 90vw;
-    //background-color: $color-black;
-    //color: $color-white;
-    //transform: translate(-95vw);
-    //transition: all 250ms linear;
-    // TODO: Add styles for md menu
     position: relative;
     background: tomato;
   }

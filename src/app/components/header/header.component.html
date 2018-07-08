@@ -1,11 +1,13 @@
 <div class="mobile-menu">
-  <span class="menu-toggle" (click)="toogleMenu()">
+  <span class="menu-toggle"
+        [class.open]="isMenuShowing"
+        (click)="toogleMenu()">
     <span class="bar bar__top"></span>
     <span class="bar bar__middle"></span>
     <span class="bar bar__bottom"></span>
   </span>
 </div>
-<header [class.show]="isShowingMenu">
+<header [class.open]="isMenuShowing">
   <span class="logo">t04435</span>
   <span class="spacer"></span>
   <span class="link">career</span>
