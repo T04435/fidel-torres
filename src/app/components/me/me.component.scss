@@ -1,0 +1,56 @@
+@import 'variables';
+
+#portfolio {
+  background-color: $color-warning;
+  padding-bottom: 3em;
+}
+
+.work {
+  display: flex;
+  flex-wrap: wrap;
+  &__item {
+    flex: 1 0 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba($color-black, 0.65);
+    }
+
+    &--title,
+    &--link {
+      position: absolute;
+      color: $color-warning;
+    }
+
+    &--title {
+      top: 25%;
+    }
+
+    &--link {
+      width: 50%;
+      bottom: 25%;
+      padding: 0.25em 1em;
+      border-radius: 1em;
+      border: 2px solid $color-warning;
+      font-variant: small-caps;
+      font-weight: bold;
+      text-align: center;
+      font-family: 'Sanchez';
+    }
+
+    &--img {
+      max-width: 100%;
+    }
+  }
+}

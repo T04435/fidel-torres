@@ -10,6 +10,7 @@ import {ToolsEnvComponent} from './components/tools-env/tools-env.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {InlineSVGModule} from 'ng-inline-svg';
 import {HttpClientModule} from '@angular/common/http';
+import {MeService} from './services/me.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import {HttpClientModule} from '@angular/common/http';
     HttpClientModule,
     InlineSVGModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    MeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

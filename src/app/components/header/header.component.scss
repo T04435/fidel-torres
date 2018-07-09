@@ -19,7 +19,8 @@
     .bar {
       display: block;
       width: $size-thumb;
-      border-top: 5px solid $color-white;
+      height: 5px;
+      background-color: $color-white;
       transition: all 250ms ease-out;
     }
 
@@ -119,8 +120,104 @@ header {
   }
 
   @include media-md() {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
     position: relative;
-    background: tomato;
+    padding: 0 1em;
+    top: 0;
+    height: $size-menu;
+    width: 100vw;
+    background-color: $color-black;
+    color: $color-white;
+    transform: translate(0);
+    transition: all 250ms linear;
+
+    .logo {
+      border-bottom: none;
+    }
+    .spacer {
+      flex: 1;
+    }
+
+    .dev-media {
+      position: fixed;
+      top: 45vh;
+      left: 0;
+      display: block;
+      height: $size-thumb * 3;
+      border: none;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      box-shadow: 0 1px 4px 2px rgba($color-black, 0.25);
+      z-index: $level-1;
+      overflow: hidden;
+
+      ::ng-deep {
+        svg {
+          .stack {
+            &-base,
+            &-overflow {
+              fill: $color-black;
+            }
+          }
+
+          .linkedin {
+            &-base {
+              fill: $color-black;
+            }
+            &-letters {
+              fill: $color-white;
+            }
+          }
+
+          .git {
+            &-mark {
+              fill: $color-black;
+            }
+          }
+        }
+      }
+
+      a {
+        width: $size-thumb;
+        height: $size-thumb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 250ms linear;
+
+        &:hover {
+          padding-right: 5px;
+          border-right: 5px solid $color-black;
+
+          ::ng-deep {
+            svg {
+              .stack {
+                &-base {
+                  fill: $color-stack-grey;
+                }
+                &-overflow {
+                  fill: $color-stack-orange;
+                }
+              }
+
+              .linkedin {
+                &-base {
+                  fill: $color-linkedin;
+                }
+              }
+
+              .git {
+                &-mark {
+                  fill: $color-github;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
 }

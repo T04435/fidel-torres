@@ -5,7 +5,16 @@
   career
 </section>
 <section id="portfolio">
-  portfolio
+  <!--TODO: Add filter(pipe) on tags(skills/languages)-->
+  <div class="work" *ngIf="myWork?.length">
+    <ng-container *ngFor="let work of myWork">
+      <div class="work__item">
+        <h3 class="work__item--title">{{work.title}}</h3>
+        <img src="{{assetsUrl}}/work/{{work.assetUrl}}" [alt]="'T04435 portfolio - ' + work.title" class="work__item--img">
+        <a [href]="work.liveUrl" target="_blank" class="work__item--link">live site</a>
+      </div>
+    </ng-container>
+  </div>
 </section>
 <section id="education">
   education
