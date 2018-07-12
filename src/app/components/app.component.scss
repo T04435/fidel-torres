@@ -9,5 +9,9 @@ main {
   &.menu-open {
     margin-left: $size-menu-open + 0.5;
     transform-origin: left center;
+
+    @include media-md() {
+      margin-left: $size-menu-open-md + 0.5;
+    }
   }
 }

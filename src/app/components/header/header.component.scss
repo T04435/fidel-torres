@@ -34,6 +34,11 @@
 
   &.open {
     left: calc(#{$size-menu-open} + #{$size-thumb / 2});
+
+    @include media-md() {
+      left: calc(#{$size-menu-open-md} + #{$size-thumb / 2});
+    }
+
     .bar__top {
       transition-delay: 450ms;
       transform-origin: top left;
@@ -66,6 +71,9 @@ header {
   transform: translate(-95vw);
   @include me-transition('250');
 
+  @include media-md() {
+    width: $size-menu-open-md;
+  }
   &.open {
     transform: translate(0px);
   }
@@ -134,88 +142,6 @@ header {
         .git {
           &-mark {
             fill: $color-github;
-          }
-        }
-      }
-    }
-  }
-
-  @include media-md() {
-
-    .dev-media {
-      position: fixed;
-      top: 45vh;
-      left: 0;
-      display: block;
-      height: $size-thumb * 3;
-      border: none;
-      border-top-right-radius: 5px;
-      border-bottom-right-radius: 5px;
-      box-shadow: 0 1px 4px 2px rgba($color-black, 0.25);
-      z-index: $level-1;
-      overflow: hidden;
-
-      ::ng-deep {
-        svg {
-          .stack {
-            &-base,
-            &-overflow {
-              fill: $color-black;
-            }
-          }
-
-          .linkedin {
-            &-base {
-              fill: $color-black;
-            }
-            &-letters {
-              fill: $color-white;
-            }
-          }
-
-          .git {
-            &-mark {
-              fill: $color-black;
-            }
-          }
-        }
-      }
-
-      a {
-        width: $size-thumb;
-        height: $size-thumb;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        @include me-transition();;
-
-        &:hover {
-          padding-right: 5px;
-          border-right: 5px solid $color-black;
-
-          ::ng-deep {
-            svg {
-              .stack {
-                &-base {
-                  fill: $color-stack-grey;
-                }
-                &-overflow {
-                  fill: $color-stack-orange;
-                }
-              }
-
-              .linkedin {
-                &-base {
-                  fill: $color-linkedin;
-                }
-              }
-
-              .git {
-                &-mark {
-                  fill: $color-github;
-                }
-              }
-            }
           }
         }
       }
