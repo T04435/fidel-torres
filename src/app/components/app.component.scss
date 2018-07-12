@@ -1,0 +1,13 @@
+@import 'variables';
+@import 'mixins';
+
+main {
+  position: relative;
+  width: 100vw;
+  @include me-transition('250');
+
+  &.menu-open {
+    margin-left: $size-menu-open + 0.5;
+    transform-origin: left center;
+  }
+}

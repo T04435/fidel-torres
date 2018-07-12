@@ -1,12 +1,15 @@
 <span class="menu-toggle"
+      [class.slide-in]="showToggleMenu"
       [class.open]="isMenuShowing"
       (click)="toggleMenuShowing()">
     <span class="bar bar__top"></span>
     <span class="bar bar__middle"></span>
     <span class="bar bar__bottom"></span>
-  </span>
+</span>
 <header [class.open]="isMenuShowing">
-  <span class="logo">t04435</span>
+  <div class="logo-container">
+    <span class="logo">fidel <span>t04435</span></span>
+  </div>
   <span class="link">career</span>
   <span class="link">portfolio</span>
   <span class="link">education</span>

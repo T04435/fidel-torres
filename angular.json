@@ -50,7 +50,8 @@
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "src/scss/base"
+                "src/scss/base",
+                "src/assets"
               ]
             },
             "scripts": []

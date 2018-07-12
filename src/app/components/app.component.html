@@ -1,9 +1,8 @@
 <app-header
-[isMenuShowing]="isMenuOpen$ | async"
-(onToggleMenuShowing)="handleToggleMenuShowing()">
-
+  [isMenuShowing]="isMenuOpen$ | async"
+  (onToggleMenuShowing)="handleToggleMenuShowing()">
 </app-header>
-<main>
+<main [class.menu-open]="isMenuOpen$ | async">
   <router-outlet></router-outlet>
 </main>
 <app-footer></app-footer>
