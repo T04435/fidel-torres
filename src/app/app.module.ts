@@ -11,6 +11,13 @@ import {FooterComponent} from './components/footer/footer.component';
 import {InlineSVGModule} from 'ng-inline-svg';
 import {HttpClientModule} from '@angular/common/http';
 import {MeService} from './services/me.service';
+import {StoreModule} from '@ngrx/store';
+import {metaReducers, reducers} from './store';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {environment} from '../environments/environment';
+import {EffectsModule} from '@ngrx/effects';
+import {StoreRouterConnectingModule} from '@ngrx/router-store';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +32,16 @@ import {MeService} from './services/me.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    InlineSVGModule.forRoot()
+    InlineSVGModule.forRoot(),
+    StoreModule.forRoot(reducers, {metaReducers}),
+    StoreDevtoolsModule.instrument( {
+      name: 'ngrx T04435 DevTools',
+      logOnly: environment.production
+    }),
+    EffectsModule.forRoot([]),
+    StoreRouterConnectingModule.forRoot({
+      stateKey: 'router'
+    })
   ],
   providers: [
     MeService

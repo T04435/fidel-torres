@@ -1,4 +1,8 @@
-<app-header></app-header>
+<app-header
+[isMenuShowing]="isMenuOpen$ | async"
+(onToggleMenuShowing)="handleToggleMenuShowing()">
+
+</app-header>
 <main>
   <router-outlet></router-outlet>
 </main>

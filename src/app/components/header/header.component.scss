@@ -1,49 +1,47 @@
 @import 'variables';
 @import 'mixins';
 
-.mobile-menu {
+.menu-toggle {
+  position: fixed;
+  top: 12px;
+  left: $size-thumb / 2;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   align-items: center;
-  padding-left: 1em;
-  height: $size-menu;
-  color: $color-white;
-  background-color: $color-black;
+  width: $size-thumb;
+  height: $size-thumb;
+  padding: 10px;
+  background-color: rgba($color-black, 0.75);
+  border-radius: 5px;
+  transition: all 250ms ease-out;
 
-  .menu-toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: $size-thumb;
-    height: $size-thumb;
-
-    .bar {
-      display: block;
-      width: $size-thumb;
-      height: 5px;
-      background-color: $color-white;
-      transition: all 250ms ease-out;
-    }
-
-    &.open {
-      .bar__top {
-        transition-delay: 150ms;
-        transform-origin: top left;
-        transform: rotateZ(45deg);
-      }
-      .bar__middle {
-        transform: translateX(-200%);
-        opacity: 0;
-      }
-      .bar__bottom {
-        transition-delay: 150ms;
-        transform-origin: bottom left;
-        transform: rotateZ(-45deg);
-      }
-    }
+  .bar {
+    display: block;
+    flex: 1 0 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: $color-white;
+    transition: all 250ms ease-out 250ms;
   }
 
-  @include media-md() {
-    display: none;
+  &.open {
+    left: 80%;
+    .bar__top {
+      transition-delay: 450ms;
+      transform-origin: top left;
+      transform: rotateZ(45deg) translate3d(-4px, -3px, 0) scaleX(1.65);
+    }
+    .bar__middle {
+      transition-delay: 350ms;
+      transform: translateX(-200%);
+      opacity: 0;
+    }
+    .bar__bottom {
+      transition-delay: 450ms;
+      transform-origin: bottom left;
+      transform: rotateZ(-45deg) translate3d(-4px, 4px, 0) scaleX(1.65);
+    }
   }
 }
 
@@ -51,10 +49,10 @@ header {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: $size-menu + 2;
+  top: 0;
   left: 0;
-  height: calc(90vh - #{$size-menu});
-  width: 90vw;
+  height: 100vh;
+  width: 65vw;
   background-color: $color-black;
   color: $color-white;
   transform: translate(-95vw);
